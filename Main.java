@@ -35,15 +35,29 @@ public class Main {
         System.out.println("Zaktualizowana choroba: " + patient1.getIllness());
         System.out.println("Zaktualizowany numer pokoju: " + patient1.getRoomNumber());
         System.out.println("Zaktualizowana specjalizacja: " + doctor.getSpecialization());
-
         nurse.displayInfo();
         nurse.performDuty();
+        Patient patient5 = new Patient("Karol", "Kamiński", 50, "Migrena", 105);
+        Patient patient6 = new Patient("Beata", "Zając", 29, "Zapalenie płuc", 106);
 
-        hospital.removeStaff(nurse);
+        hospital.addPatient(patient5);
+        hospital.addPatient(patient6);
+
+        Doctor doctor2 = new Doctor("Janusz", "Lewandowski", 55, "Dermatologia");
+        Nurse nurse2 = new Nurse("Monika", "Kowalczyk", 32, "Geriatria");
+        Nurse nurse3 = new Nurse("Agnieszka", "Zielińska", 28, "Chirurgia");
+        Nurse nurse4 = new Nurse("Paweł", "Jankowski", 35, "Ortopedia");
+
+        hospital.addStaff(doctor2);
+        hospital.addStaff(nurse2);
+        hospital.addStaff(nurse3);
+        hospital.addStaff(nurse4);
 
         hospital.removePatient(patient4);
+        hospital.removeStaff(nurse);
 
         hospital.displayStaff();
+
         hospital.displayPatients();
     }
 }
